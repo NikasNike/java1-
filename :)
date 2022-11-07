@@ -1,0 +1,37 @@
+class Person {
+    String DadName = "Николай";
+    String MomName = "Елена";
+    static String DadEyes = "Светлые";
+    static String MomEyes = "Темные";
+    static String MomHair = "Светлые";
+    static String DadHair = "Темные";
+}
+class Employee extends Person{
+    public static String Eyes() {
+        if (DadEyes == MomEyes){
+            return DadEyes;
+        }
+        else{
+            return "Темный";
+        }
+        
+    }
+}    
+class Employe extends Person{
+    public static String Hair() {
+        if (DadHair == MomHair){
+            return DadEyes;
+        }
+        else{
+            return "Темный";
+        }    
+    }
+}
+public class Program{
+    public static void main(String[] args) {
+
+        System.out.printf("Программа с учетом ооп и наследия!\n");
+        System.out.printf("Ваш цвет волос возмжно  " +  Employe.Hair() + "\n");
+        System.out.printf("Ваш цвет глаз возмжно  " + Employee.Eyes());
+    }
+}
