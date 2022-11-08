@@ -1,3 +1,47 @@
+abstract class Person {
+    String DadName = "Николай";
+    String MomName = "Елена";
+    static String DadEyes = "Светлые";
+    static String MomEyes = "Темные";
+    static String MomHair = "Светлые";
+    static String DadHair = "Темные";
+
+    abstract void start();
+}
+class Eyess extends Person{
+    @Override
+    public void start() {
+        if (DadEyes == MomEyes){
+            System.out.printf("Ваш цвет волос возмжно  " +  DadEyes + "\n");
+        }
+        else{
+            System.out.printf("Ваш цвет волос возмжно темный\n");
+        }
+    }
+}    
+class Employe extends Person{
+    @Override
+    public void start() {
+        if (DadHair == MomHair){
+            System.out.printf("Ваш цвет волос возмжно  " +  DadHair + "\n");
+        }
+        else{
+            System.out.printf("Ваш цвет волос возмжно темный\n");
+        }    
+    }
+}
+public class Program{
+    public static void main(String[] args) {
+        Employe ex = new Employe();
+        Eyess exe = new Eyess();
+        ex.start();
+        exe.start();
+    }
+}
+
+
+
+/*
 class Person {
     String DadName = "Николай";
     String MomName = "Елена";
@@ -35,3 +79,4 @@ public class Program{
         System.out.printf("Ваш цвет глаз возмжно  " + Employee.Eyes());
     }
 }
+*/
