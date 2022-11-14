@@ -1,82 +1,52 @@
-abstract class Person {
-    String DadName = "Николай";
-    String MomName = "Елена";
-    static String DadEyes = "Светлые";
-    static String MomEyes = "Темные";
-    static String MomHair = "Светлые";
-    static String DadHair = "Темные";
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
-    abstract void start();
-}
-class Eyess extends Person{
-    @Override
-    public void start() {
-        if (DadEyes == MomEyes){
-            System.out.printf("Ваш цвет волос возмжно  " +  DadEyes + "\n");
-        }
-        else{
-            System.out.printf("Ваш цвет волос возмжно темный\n");
-        }
-    }
-}    
-class Employe extends Person{
-    @Override
-    public void start() {
-        if (DadHair == MomHair){
-            System.out.printf("Ваш цвет волос возмжно  " +  DadHair + "\n");
-        }
-        else{
-            System.out.printf("Ваш цвет волос возмжно темный\n");
-        }    
-    }
-}
-public class Program{
-    public static void main(String[] args) {
-        Employe ex = new Employe();
-        Eyess exe = new Eyess();
-        ex.start();
-        exe.start();
-    }
-}
+public class baza1 {
+    public static void main(String[] args) throws InterruptedException {
+            Baze baz = new Baze();
+            attack att = new attack();
+            clas clas = new clas();
+            clas.clas();
 
 
+    }
+}
+//здоровье - урон - время перезарядки
+class Baze {
+    static int[] Baze = new int[] {1000, 20, 2};
+}
+class attack{
+    static int[] attack = new int[] {200, 100, 3};
+}
+class clas{ 
+    public void clas() throws InterruptedException {
+        int timeAttack = 1;
+        int timeBaze = 1;
+        int one = 1;
+        while(one == 1){
+            if (timeAttack >= attack.attack[2]){
+                Baze.Baze[0] -= attack.attack[1];
+                timeAttack = 0;
+                System.out.printf("Baze xp - " + attack.attack[1] + "::: Baze xp = " + Baze.Baze[0]+"\n");
+                if (Baze.Baze[0] <= 0){
+                    System.out.printf("______Attack WIN________"+"\n");
+                    break;
+                }
+            }
+            if (timeBaze >= Baze.Baze[2]){
+                attack.attack[0] -= Baze.Baze[1];
+                timeBaze = 0;
+                System.out.printf("Attack XP - " + Baze.Baze[1] + "::::: Attack XP = " + attack.attack[0] +"\n");
+                if (attack.attack[0] <= 0){
+                    System.out.printf("______Baze WIN________"+"\n");
+                    break;
+                }
 
-/*
-class Person {
-    String DadName = "Николай";
-    String MomName = "Елена";
-    static String DadEyes = "Светлые";
-    static String MomEyes = "Темные";
-    static String MomHair = "Светлые";
-    static String DadHair = "Темные";
-}
-class Employee extends Person{
-    public static String Eyes() {
-        if (DadEyes == MomEyes){
-            return DadEyes;
+            }
+            timeAttack++;
+            timeBaze++;
+            Thread.sleep(1000);
         }
-        else{
-            return "Темный";
-        }
-        
-    }
-}    
-class Employe extends Person{
-    public static String Hair() {
-        if (DadHair == MomHair){
-            return DadEyes;
-        }
-        else{
-            return "Темный";
-        }    
     }
 }
-public class Program{
-    public static void main(String[] args) {
-
-        System.out.printf("Программа с учетом ооп и наследия!\n");
-        System.out.printf("Ваш цвет волос возмжно  " +  Employe.Hair() + "\n");
-        System.out.printf("Ваш цвет глаз возмжно  " + Employee.Eyes());
-    }
-}
-*/
